@@ -13,4 +13,6 @@
   ([config]
      (:body (req :get "config" config)))
   ([config modify]
-     (:body (req :put "config" config modify))))
+     (-> (req :put "config" config modify)
+         :body
+         first)))
