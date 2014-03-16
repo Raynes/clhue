@@ -6,6 +6,11 @@
   [config]
   (:body (req :get "lights" config)))
 
+(defn light
+  "Get ONE light."
+  [config id]
+  (:body (req :get (format "lights/%s" id) config)))
+
 (defn scan
   "Scan for new lights."
   [config]
