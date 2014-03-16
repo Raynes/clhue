@@ -19,6 +19,6 @@
                  :content-type :json}]
        (client/request
         (merge base
-               (if (#{:post :put} method)
+               (if (#{:post :put :delete} method)
                  {:form-params body}
                  {:query-params body}))))))
