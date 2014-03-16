@@ -12,8 +12,8 @@
   "Delete a user from the whitelist."
   [config user]
   (-> (req :delete (format "config/whitelist/%s" user) config)
-      :body
-      first))
+      (:body)
+      (first)))
 
 (defn config
   "Get or set configuration."
@@ -21,8 +21,8 @@
      (:body (req :get "config" config)))
   ([config modify]
      (-> (req :put "config" config modify)
-         :body
-         first)))
+         (:body)
+         (first))))
 
 (defn full-state
   "Get ALL the things."
