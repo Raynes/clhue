@@ -17,7 +17,19 @@
   ([config id]
      (:body (req :get (format "lights/%s" id) config)))
   ([config id settings]
-     (:body (req :put (format "lights/%s/state" id) config settings))))
+     ;; For some God awful reason, hue thought it was a good idea
+     ;; to have a separate endpoint for setting 'state' that does
+     ;; not include renaming. Because of this, yes, this is ugly.
+     (let [name (:name settings)
+           responses (when name
+                       (-> (req :put (format "lights/%s" id)
+                                config {:name name})
+                           (:body)
+                           (first)))
+           settings (dissoc settings :name)]
+       (-> (req :put (format "lights/%s/state" id) config settings)
+           (:body)
+           (into responses)))))
 
 (defn scan
   "Scan for new lights."
