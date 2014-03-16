@@ -8,6 +8,13 @@
                   {:devicetype description})]
     (first (:body resp))))
 
+(defn delete-user
+  "Delete a user from the whitelist."
+  [config user]
+  (-> (req :delete (format "config/whitelist/%s" user) config)
+      :body
+      first))
+
 (defn config
   "Get or set configuration."
   ([config]
