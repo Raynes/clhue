@@ -1,6 +1,12 @@
 (ns me.raynes.clhue.lights
   (:require [me.raynes.clhue.request :refer [req]]))
 
+(defn percentage
+  "Hue brightness goes up to 255. Would you rather use a
+   percentage."
+  [n]
+  (quot (* n 255) 100))
+
 (defn lights
   "Get ALL the lights."
   [config]
