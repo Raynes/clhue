@@ -7,9 +7,11 @@
   (:body (req :get "lights" config)))
 
 (defn light
-  "Get ONE light."
-  [config id]
-  (:body (req :get (format "lights/%s" id) config)))
+  "Get a light by ID, or set a light's state by ID."
+  ([config id]
+     (:body (req :get (format "lights/%s" id) config)))
+  ([config id settings]
+     (:body (req :put (format "lights/%s/state" id) config settings))))
 
 (defn scan
   "Scan for new lights."
