@@ -23,3 +23,8 @@
      (-> (req :put "config" config modify)
          :body
          first)))
+
+(defn full-state
+  "Get ALL the things."
+  [config]
+  (:body (req :get nil config)))
