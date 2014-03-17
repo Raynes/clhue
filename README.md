@@ -71,6 +71,40 @@ state. As such, I've made it so that if you try to update :name it shoots off
 the proper request for that, and then another request for any other 'state' you
 may have updated. I've done the same thing with the groups API, so keep this in mind.
 
+
+## Magic REPL
+
+There is an included `me.raynes.clhue.repl` namespace that is meant to be used
+for initialization purposes in `lein repl`. You can set it up in
+`~/.lein/profiles` like so:
+
+```clojure
+{:user {:aliases {"hue" ["with-profile" "user,hue" "repl"]}}
+ :hue {:repl-options {:init-ns me.raynes.clhue.repl
+                      :init (setup)}
+       :dependencies [[me.raynes/clhue "0.1.2"]]}}
+```
+
+With the above you should be able to run the following and get a fully setup
+REPL:
+
+```
+lein hue
+```
+
+It's like a magical leiningen plugin that isn't really a leiningen plugin! So
+what does all this magic do, you ask? Well, it drops you into the
+`me.raynes.clhue.repl` namespace and imports all the APIs, making them
+accessible by their name. So, `me.raynes.clhue.lights` is `lights`. You can do
+things like `(lights/lights config)` to get the currently available lights.
+
+Note that `config` is also defined for you. It reads ~/.clhue which should
+contain a Clojure map like this:
+
+```clojure
+{:user "218fc3461105aa716f12aaa384f6fdb", :address "192.168.1.148"}
+```
+
 ## License
 
 Copyright © 2014 Anthony Grimes
