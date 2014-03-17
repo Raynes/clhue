@@ -43,8 +43,8 @@ example, let's play with lights a bit:
 ```clojure
 user> (lights/lights config)
 {:1 {:name "Living door"}, :2 {:name "Living room middle"}, :3 {:name "Living room window"}}
-user> (lights/light config 1)
 
+user> (lights/light config 1)
 {:state {:alert "select", :effect "none", :hue 36327, :on true, :sat 254, :xy [0.2883 0.2795], :colormode "hs", :reachable true, :ct 153, :bri 242}, :type "Extended color light", :name "Living door", :modelid "LCT001", :swversion "66009663", :pointsymbol {:1 "none", :2 "none", :3 "none", :4 "none", :5 "none", :6 "none", :7 "none", :8 "none"}}
 
 user> (lights/light config 1 {:effect "colorloop"})
