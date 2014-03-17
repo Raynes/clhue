@@ -55,7 +55,7 @@ user> (lights/light config 1 {:effect "colorloop"})
 ({:success {:/lights/1/state/effect "colorloop"}})
 ```
 
-Pefect rave lighting! You can also use schedules to schedule events, groups to
+Perfect rave lighting! You can also use schedules to schedule events, groups to
 control multiple lights at once (this API is in its infacy).
 
 Have fun!
