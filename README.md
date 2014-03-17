@@ -73,7 +73,7 @@ may have updated. I've done the same thing with the groups API, so keep this in 
 
 ## License
 
-Copyright © 2014 FIXME
+Copyright © 2014 Anthony Grimes
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
