@@ -4,6 +4,10 @@ This is a simple lightweight API client for
 [Hue lighting systems](http://meethue.com/). It's the wand with which you shall
 make magic.
 
+## Name
+
+Clue.
+
 ## Usage
 
 The API of this library is mapped closely to the
