@@ -1,4 +1,4 @@
-(defproject clhue "0.1.0"
+(defproject clhue "0.1.1"
   :description "An API client for Hue."
   :url "https://github.com/Raynes/clhue"
   :license {:name "Eclipse Public License"
