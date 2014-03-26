@@ -6,7 +6,7 @@ make magic.
 
 ## Name
 
-Clue.
+Clue with an English accent.
 
 ## Usage
 
