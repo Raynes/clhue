@@ -8,7 +8,7 @@
 
 (defn setup
   "Setup a REPL for optimal Hueing."
-  []
+  [& _]
   (require '[me.raynes.clhue.lights :as lights]
            '[me.raynes.clhue.groups :as groups]
            '[me.raynes.clhue.schedules :as schedules]
